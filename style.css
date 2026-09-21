@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    padding: 20px;
+
+    font-family: "Rubik", sans-serif;
+    background-color: #f8f3e7;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: clamp(200px, 55vw, 300px);
+    height: auto;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HORÁRIOS
+========================= */
+
+.horario {
+    width: 100%;
+
+    display: flex;
+
+    background-color: #FFD500;
+    color: #0d506f;
+
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.hora {
+    position: relative;
+
+    width: 50%;
+    min-width: 0;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: clamp(4px, 1.5vw, 10px);
+    padding: clamp(5px, 1.5vw, 10px);
+}
+
+
+/* Linha que separa os dois horários */
+
+.hora:first-child::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 10%;
+
+    width: 1px;
+    height: 80%;
+
+    background-color: #0073A8;
+}
+
+
+/* Ícone da farmácia */
+
+.farma {
+    width: clamp(45px, 15vw, 100px);
+    max-width: 40%;
+    height: auto;
+
+    flex-shrink: 0;
+}
+
+
+/* Texto */
+
+.textohora {
+    min-width: 0;
+    padding-top: clamp(2px, 1vw, 10px);
+}
+
+.textohora h3 {
+    margin: 2px;
+
+    font-size: clamp(10px, 2.6vw, 14px);
+    line-height: 1.1;
+}
+
+.textohora p {
+    margin: 2px;
+
+    font-size: clamp(9px, 2.4vw, 14px);
+    line-height: 1.25;
+}
+
+
+/* =========================
+   ENTREGA
+========================= */
+
+.entrega {
+    width: 62%;
+    min-height: 50px;
+
+    margin: 15px auto 0;
+    padding: 5px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(5px, 2vw, 10px);
+
+    background-color: #FFD500;
+    color: #0d506f;
+
+    border-radius: 15px;
+}
+
+.entregador {
+    width: clamp(35px, 9vw, 48px);
+    height: auto;
+
+    flex-shrink: 0;
+}
+
+.textoentrega {
+    min-width: 0;
+}
+
+.textoentrega h3,
+.textoentrega p {
+    margin: 0;
+
+    font-size: clamp(10px, 2.5vw, 14px);
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(10px, 3vw, 15px);
+
+    margin-top: 20px;
+}
+
+.botao {
+    width: 82%;
+    min-height: clamp(45px, 10vw, 55px);
+
+    padding: 8px 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    text-decoration: none;
+    text-align: center;
+
+    font-size: clamp(16px, 4.5vw, 25px);
+    font-weight: 450;
+
+    border-radius: 15px;
+
+    transition: transform 0.3s;
+}
+
+.amarelo {
+    background-color: #FFD500;
+    color: #0073A8;
+
+    font-weight: 500;
+}
+
+.azul {
+    background-color: #0073A8;
+    color: white;
+}
+
+.ifood {
+    width: clamp(45px, 11vw, 60px);
+    height: auto;
+}
+
+
+/* Hover somente em dispositivos que realmente têm mouse */
+
+@media (hover: hover) {
+    .botao:hover {
+        transform: scale(0.95);
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .entrega {
+        width: 75%;
+    }
+}
+
+
+/* =========================
+   CELULARES MUITO PEQUENOS
+========================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .hora {
+        padding: 5px 3px;
+    }
+
+    .farma {
+        width: 42px;
+    }
+
+    .textohora h3 {
+        font-size: 9px;
+    }
+
+    .textohora p {
+        font-size: 8px;
+    }
+
+    .entrega {
+        width: 80%;
+    }
+
+    .botao {
+        width: 88%;
+    }
+}
